@@ -1,7 +1,9 @@
 # Importações
 import os 
-import func
+import functions
 import time
+
+import functions
 
 # Variaveis e Listas
 opc: int | None = None
@@ -34,7 +36,7 @@ while opc != 0: # Laço de repetição para entrada no menu principal
             continue
 
         if opc == 1:
-            func.cadastrar(listall)
+            functions.cadastrar(listall)
 
     except ValueError:
         print('Somente números podem ser inseridos.') 
