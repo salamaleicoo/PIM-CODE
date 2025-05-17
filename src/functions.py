@@ -1,3 +1,6 @@
+import time
+
+# Função Cadastrar com retorno de erros de quantidade de caracteres. Definindo máximo de caracteres.
 def cadastrar(listall):
     print('----------CADASTRAR ATIVO----------')
     try:
@@ -5,6 +8,8 @@ def cadastrar(listall):
         desc = input('Insira uma descrição: ').strip()
         if not desc:
             print('Erro! Descrição não pode estar vazia!')
+        elif len(desc) > 300:
+            print('Erro! Descrição excede 300 caracteres!')
             print('-------------------------------------')
             input('Pressione Enter para continuar...')
             return
@@ -19,12 +24,16 @@ def cadastrar(listall):
         quant = int(input('Digite a quantidade: '))
         if quant <= 0:
             print('Erro! Quantidade deve ser maior que zero(0)!')
+        elif len(quant) > 1000:
+            print('Erro! Quantidade maior que 1000!')
             print('--------------------------------------------')
             input('Pressione Enter para continuar...')
             return
 
         nota_fiscal = input('Digite o número da Nota Fiscal(NF): ').strip()
-        
+        if len(nota_fiscal) > 44:
+            print('Erro! Nota Fiscal excede 44 caracteres!')
+
         ativo = {
             'Id': id_ativo,
             'Descrição': desc,
@@ -36,9 +45,14 @@ def cadastrar(listall):
 
         listall.append(ativo)
         print(f'Ativo cadastrado com Id: {id_ativo}')
+        time.sleep(3)
     
     except ValueError:
         print('Erro! Valor ou Quantidade devem ser numeros válidos!')
         input('Pressione Enter para continuar...')
         return
+
+# Função listar com parâmetros de decisão
+def listar(listall):
+    print('----------LISTA DE ATIVOS----------')
     
