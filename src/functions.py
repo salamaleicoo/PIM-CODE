@@ -22,30 +22,31 @@ def cadastrar(listall):
             return
         
         quant = int(input('Digite a quantidade: '))
-        if quant <= 0:
-            print('Erro! Quantidade deve ser maior que zero(0)!')
-        elif len(quant) > 1000:
-            print('Erro! Quantidade maior que 1000!')
-            print('--------------------------------------------')
-            input('Pressione Enter para continuar...')
-            return
+        # if quant <= 0:
+        #     print('Erro! Quantidade deve ser maior que zero(0)!')
+        # elif len(quant) > 1000:
+        #     print('Erro! Quantidade maior que 1000!')
+        #     print('--------------------------------------------')
+        #     input('Pressione Enter para continuar...')
+        #     return
 
         nota_fiscal = input('Digite o número da Nota Fiscal(NF): ').strip()
         if len(nota_fiscal) > 44:
             print('Erro! Nota Fiscal excede 44 caracteres!')
 
         ativo = {
-            'Id': id_ativo,
-            'Descrição': desc,
-            'Valor': valor,
-            'Quantidade': quant,
-            'Nota Fiscal': nota_fiscal,
-            'Ativo': True
+            'id': id_ativo,
+            'desc': desc,
+            'valor': valor,
+            'qnt': quant,
+            'notaF': nota_fiscal,
+            'ativo': True
         }
 
         listall.append(ativo)
         print(f'Ativo cadastrado com Id: {id_ativo}')
-        time.sleep(3)
+        input('Pressione Enter para continuar...')
+
     
     except ValueError:
         print('Erro! Valor ou Quantidade devem ser numeros válidos!')
@@ -56,3 +57,13 @@ def cadastrar(listall):
 def listar(listall):
     print('----------LISTA DE ATIVOS----------')
     
+    for item in listall:
+        print('Id:', item['id'])
+        print('Descrição:', item['desc'])
+        print('Valor:', item['valor'])
+        print('Quantidade:', item['qnt'])
+        print('Nota Fiscal:', item['notaF'])
+        print('Ativo:', item['ativo'])
+        print('-----------------------------------')
+
+    input("Pressione Enter para continuar...")

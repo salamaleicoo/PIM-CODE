@@ -38,6 +38,9 @@ while opc != 0: # Laço de repetição para entrada no menu principal
         if opc == 1:
             functions.cadastrar(listall)
 
+        if opc == 5:
+            functions.listar(listall)
+
     except ValueError:
         print('Somente números podem ser inseridos.') 
         input('Pressione Enter para continuar')
