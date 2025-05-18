@@ -21,14 +21,14 @@ def cadastrar(listall):
             input('Pressione Enter para continuar...')
             return
         
-        quant = int(input('Digite a quantidade: '))
-        # if quant <= 0:
-        #     print('Erro! Quantidade deve ser maior que zero(0)!')
-        # elif len(quant) > 1000:
-        #     print('Erro! Quantidade maior que 1000!')
-        #     print('--------------------------------------------')
-        #     input('Pressione Enter para continuar...')
-        #     return
+        qtd = int(input('Digite a Quantidade: '))
+        if qtd <= 0:
+            print('Erro! Quantidade deve ser maior que zero(0)!')
+        elif qtd > 1000:
+            print('Erro! Quantidade maior que 1000!')
+            print('--------------------------------------------')
+            input('Pressione Enter para continuar...')
+            return
 
         nota_fiscal = input('Digite o número da Nota Fiscal(NF): ').strip()
         if len(nota_fiscal) > 44:
@@ -38,7 +38,7 @@ def cadastrar(listall):
             'id': id_ativo,
             'desc': desc,
             'valor': valor,
-            'qnt': quant,
+            'qnt': qtd,
             'notaF': nota_fiscal,
             'ativo': True
         }
