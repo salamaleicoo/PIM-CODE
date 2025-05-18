@@ -71,3 +71,4 @@ def listar(listall):
 # Função Consultar
 def consultar(listall):
     print('----------CONSUTAR ATIVOS----------')
+    input('Pressione Enter para sair...')
