@@ -53,7 +53,7 @@ def cadastrar(listall):
         input('Pressione Enter para continuar...')
         return
 
-# Função listar com parâmetros de decisão
+# Função listar
 def listar(listall):
     print('----------LISTA DE ATIVOS----------')
     
@@ -67,3 +67,7 @@ def listar(listall):
         print('-----------------------------------')
 
     input("Pressione Enter para continuar...")
+
+# Função Consultar
+def consultar(listall):
+    print('----------CONSUTAR ATIVOS----------')
