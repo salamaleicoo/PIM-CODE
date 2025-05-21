@@ -3,12 +3,12 @@ import os
 # Função Cadastrar com retorno de erros de quantidade de caracteres. Definindo máximo de caracteres.
 def cadastrar(listall):
     os.system('cls')
-    print('----------CADASTRAR ATIVO----------')
+    print('----------CADASTRAR ITEM----------')
     try:
         id = len(listall) + 1
 
         while True:
-            nome = input('Insira o nome do ativo: ').strip()
+            nome = input('Insira o nome do item: ').strip()
             if not nome:
                 print('Erro! Nome não pode estar vazio!')
             elif len(nome) > 100:
@@ -17,7 +17,7 @@ def cadastrar(listall):
                 break
 
         while True:
-            desc = input('Insira uma descrição: ').strip()
+            desc = input('Insira uma descrição (limite de 300 caracteres): ').strip()
             if not desc:
                 print('Erro! Descrição não pode estar vazia!')
             elif len(desc) > 300:
@@ -207,7 +207,7 @@ Qual item você deseja alterar?
 
 def listar(listall):
     os.system('cls')
-    print('----------LISTA DE ATIVOS----------')
+    print('----------LISTA DE ITENS----------')
     
     for item in listall:
         print('Id:', item['id'])
