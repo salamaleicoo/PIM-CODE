@@ -1,15 +1,13 @@
-# Importações
 import os 
 import functions
 import time
 
 import functions
 
-# Variaveis e Listas
 opc: int | None = None
 listall = []
 
-while opc != 0: # Laço de repetição para entrada no menu principal
+while opc != 0: 
     os.system('cls')
     print('''         
 ----------MENU PRINCIPAL----------
@@ -17,11 +15,11 @@ while opc != 0: # Laço de repetição para entrada no menu principal
 2- Alterar
 3- Excluir
 4- Consultar
-5- Listar
+5- Gerar Relatório
 0- Sair
 ----------------------------------''')
 
-    try: # Erros de entrada
+    try: 
         opc = int(input('Escolha uma opção: '))
 
         if opc > 6:
