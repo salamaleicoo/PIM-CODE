@@ -1,6 +1,5 @@
 import os
 
-# Função Cadastrar com retorno de erros de quantidade de caracteres. Definindo máximo de caracteres.
 def cadastrar(listall):
     os.system('cls')
     print('----------CADASTRAR ITEM----------')
@@ -56,26 +55,32 @@ def cadastrar(listall):
                     break
             except ValueError:
                 print('Erro! Valor deve ser um número válido!')
+        while True:
+            ativo = input('Este produto é ativo? (S/N): ').strip().upper()
+            if ativo in ['S', 'N']:
+                break
+            else:
+                print('Erro! Responda somente com "S" para sim ou "N" para não.')
 
-        ativo = {
+        produto = {
             'id': id,
             'nome': nome,
             'desc': desc,
             'valor': valor,
             'qnt': qtd,
             'notaF': nota_fiscal,
-            'ativo': 'S'
+            'ativo': ativo
         }
 
-        listall.append(ativo)
+        listall.append(produto)
         print(f'Ativo cadastrado com sucesso!')
-        print('Id:', ativo['id'])
-        print('Nome:', ativo['nome'])
-        print('Descrição:', ativo['desc'])
-        print('Valor:', ativo['valor'])
-        print('Quantidade:', ativo['qnt'])
-        print('Nota Fiscal:', ativo['notaF'])
-        print('Ativo:', ativo['ativo'])
+        print('Id:', produto['id'])
+        print('Nome:', produto['nome'])
+        print('Descrição:', produto['desc'])
+        print('Valor:', produto['valor'])
+        print('Quantidade:', produto['qnt'])
+        print('Nota Fiscal:', produto['notaF'])
+        print('Ativo:', produto['ativo'])
         input('Pressione Enter para continuar...')
 
     except Exception as e:
@@ -101,7 +106,6 @@ def consultar(listall, isAlterar: bool = False, isExcluir: bool = False):
         else:
             selectedProduct = int(input('Insira o id do produto que deseja consultar: '))
 
-        # Verifica se o produto existe
         produto_encontrado = next((p for p in listall if p['id'] == selectedProduct), None)
 
         if produto_encontrado:
@@ -207,7 +211,11 @@ Qual item você deseja alterar?
 
 def listar(listall):
     os.system('cls')
+<<<<<<< HEAD
     print('----------LISTA DE ITENS----------')
+=======
+    print('----------RELATÓRIO DOS PRODUTOS----------')
+>>>>>>> de8000c41b4999540cb3c90f7f3dc4a60640d381
     
     for item in listall:
         print('Id:', item['id'])
