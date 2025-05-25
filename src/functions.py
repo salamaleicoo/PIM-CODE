@@ -211,11 +211,11 @@ Qual item você deseja alterar?
 
 def listar(listall):
     os.system('cls')
-<<<<<<< HEAD
+
     print('----------LISTA DE ITENS----------')
-=======
+
     print('----------RELATÓRIO DOS PRODUTOS----------')
->>>>>>> de8000c41b4999540cb3c90f7f3dc4a60640d381
+
     
     for item in listall:
         print('Id:', item['id'])
